@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Taça Cidade de Londrina — Troféu Iran Campos</title>
+<meta content="Site oficial da Taça Cidade de Londrina — Troféu Iran Campos" name="description"/>
+<style>
+    :root{
+      --red:#9b1e1e;
+      --red-dark:#7f1616;
+      --white:#ffffff;
+      --muted:#f6f6f6;
+      --radius:14px;
+      --container:1100px;
+      --glass: rgba(255,255,255,0.07);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--muted),#fff);color:var(--red-dark);}
+    header{background:var(--white);border-bottom:4px solid var(--red);}
+    .wrap{max-width:var(--container);margin:0 auto;padding:18px;display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:68px;width:68px;object-fit:contain;border-radius:10px}
+    .brand h1{font-size:20px;margin:0;color:var(--red-dark);letter-spacing:1px}
+    nav{margin-left:auto}
+    nav a{margin-left:14px;text-decoration:none;color:var(--red-dark);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;padding:42px 18px}
+    .hero-card{background:linear-gradient(180deg,var(--white),#fff);padding:28px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.06);}
+    .hero h2{margin:0;color:var(--red-dark);font-size:34px}
+    .hero p{color:#6b6b6b;margin-top:10px}
+    .cta{margin-top:18px}
+    .btn{background:var(--red);color:var(--white);border:none;padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:2px solid var(--red);color:var(--red)}
+    .escudo-wrap{display:flex;justify-content:center}
+    .escudo{width:280px;height:320px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--white);padding:18px;box-shadow:0 12px 30px rgba(0,0,0,0.06)}
+    .escudo img{max-width:100%;max-height:100%;object-fit:contain}
+    main{max-width:var(--container);margin:26px auto;padding:8px}
+    .grid{display:grid;grid-template-columns:1fr 420px;gap:22px}
+    .card{background:var(--white);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px solid #f0f0f0;text-align:left}
+    th{font-weight:700;color:var(--red-dark)}
+    .pos{width:36px;font-weight:800}
+    .teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+    .team{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(155,30,30,0.06);display:flex;gap:10px;align-items:center}
+    .team .tlogo{width:44px;height:44px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center}
+    .team h4{margin:0;font-size:14px}
+    .files{display:flex;flex-direction:column;gap:10px}
+    .file{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:10px;border:1px dashed rgba(0,0,0,0.06)}
+    footer{margin-top:28px;padding:18px;background:transparent}
+    .contact{display:flex;gap:12px;align-items:center}
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr}
+      .escudo{width:220px;height:260px}
+      .wrap{padding:12px}
+    }
+  </style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="brand">
+<img alt="Escudo Taça Cidade de Londrina" src="9.jpg"/>
+<div>
+<h1>Taça Cidade de Londrina</h1>
+<div style="font-size:12px;color:#9b9b9b;margin-top:4px">Troféu Iran Campos — Federação Londrinense</div>
+</div>
+</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#classificacao">Classificação</a>
+<a href="#equipes">Equipes</a>
+<a href="#regulamento">Regulamento</a>
+<a href="#contato">Contato</a>
+</nav>
+</div>
+</header>
+<section class="hero" id="home">
+<div class="hero-card">
+<h2>Taça Cidade de Londrina — Troféu Iran Campos</h2>
+<p>Competição organizada pela Federação Londrinense. Acompanhe a tabela, equipes participantes, regulamento e entre em contato para inscrições.</p>
+<div class="cta">
+<a class="btn" href="https://wa.me/5521988485694" target="_blank">Quero me inscrever</a>
+<button class="btn ghost" onclick="alert('Abra o WhatsApp ou envie email para federacaolondrinense@hotmail.com')" style="margin-left:8px">Ver regulamento</button>
+</div>
+<div style="margin-top:18px;font-size:13px;color:#6b6b6b">Próxima atualização da tabela: <strong id="updated">—</strong></div>
+</div>
+<div class="escudo-wrap">
+<div class="escudo">
+<img alt="Escudo" src="9.jpg"/>
+</div>
+</div>
+</section>
+<main>
+<div class="grid">
+<div>
+<div class="card" id="classificacao">
+<h3 style="margin-top:0;color:var(--red-dark)">Classificação</h3>
+<p style="margin:6px 0 12px;color:#6b6b6b">Tabela atualizada automaticamente — ordene por pontos ou saldo.</p>
+<div style="overflow:auto">
+<table id="standings">
+<thead>
+<tr>
+<th class="pos">#</th>
+<th>Time</th>
+<th>J</th>
+<th>V</th>
+<th>E</th>
+<th>D</th>
+<th>GP</th>
+<th>GC</th>
+<th>SG</th>
+<th>Pts</th>
+</tr>
+</thead>
+
+<tbody>
+<tr><td class="pos">1</td><td>ARAPONGAS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="pos">2</td><td>BAURU EC</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="pos">3</td><td>CLUBE ATLÉTICO ASSISENSE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="pos">4</td><td>CLUBE ATLÉTICO CAMBÉ</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="pos">5</td><td>JABOTICABAL ATLÉTICO</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="pos">6</td><td>LGM FOOTBAL</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="pos">7</td><td>POLIVALENTE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="pos">8</td><td>UNIÃO CACOALENSE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</tbody>
+
+</table>
+</div>
+<div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+<button class="btn" onclick="sortStandings('pts')">Ordenar por Pontos</button>
+<button class="btn ghost" onclick="sortStandings('sg')">Ordenar por Saldo</button>
+<div style="margin-left:auto;font-size:13px;color:#888">Total equipes: <strong id="teamsCount">0</strong></div>
+</div>
+</div><div class="card" id="confrontos"><h3 style="margin-top:0;color:var(--red-dark)">Confrontos</h3><div class="matches">
+<h4 style="color:var(--red-dark);margin-top:24px">1ª Rodada</h4>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Polivalente" height="60" src="1.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Polivalente</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Arapongas" height="60" src="2.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Arapongas</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 08:45 — 📍 Estádio do Café</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Jaboticabal" height="60" src="3.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Jaboticabal</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="LGM Footbal" height="60" src="4.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">LGM Footbal</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 10:30 — 📍 Estádio do Café</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Assisense" src="5.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Assisense</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Cambé" src="6.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Cambé</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 15:00 — 📍 Estádio Municipal José Garbelini</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Bauru EC" height="60" src="7.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Bauru EC</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="União Cacoalense" src="8.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">União Cacoalense</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 18:00 — 📍 Estádio Municipal José Garbelini</div>
+</div>
+<h4 style="color:var(--red-dark);margin-top:24px">2ª Rodada</h4>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Cambé" src="6.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Cambé</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Polivalente" height="60" src="1.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Polivalente</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 08:45 — 📍 Estádio Municipal José Garbelini</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Arapongas" height="60" src="2.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Arapongas</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Jaboticabal" height="60" src="3.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Jaboticabal</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 10:30 — 📍 SM Sports</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="LGM Footbal" height="60" src="4.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">LGM Footbal</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Assisense" src="5.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Assisense</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 15:00 — 📍 Estádio Uady Chaiben</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Bauru EC" height="60" src="7.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Bauru EC</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="União Cacoalense" src="8.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">União Cacoalense</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 18:00 — 📍 Estádio Uady Chaiben</div>
+</div>
+<h4 style="color:var(--red-dark);margin-top:24px">3ª Rodada</h4>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Jaboticabal" height="60" src="3.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Jaboticabal</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Cambé" src="6.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Cambé</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 08:45 — 📍 SM Sports</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Polivalente" height="60" src="1.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Polivalente</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="LGM Footbal" height="60" src="4.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">LGM Footbal</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 10:30 — 📍 SM Sports</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Assisense" src="5.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Assisense</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Arapongas" height="60" src="2.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Arapongas</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 15:00 — 📍 SM Sports</div>
+</div>
+<div class="match-card" style="text-align:center;margin-bottom:18px;padding:12px;border-radius:14px;background:var(--white);border:1px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,0.08)">
+<div class="teams" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="Bauru EC" height="60" src="7.jpg" style="background-color:white; border-radius:8px; padding:4px;" width="60"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">Bauru EC</span>
+</div>
+<div style="font-weight:800;font-size:18px;color:var(--red-dark)">X</div>
+<div class="team" style="display:flex;flex-direction:column;align-items:center;">
+<img alt="União Cacoalense" src="8.jpg" style="width:60px;height:60px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,0.1);object-fit:contain;border-radius:8px;"/>
+<span style="font-weight:700;font-size:13px;margin-top:4px">União Cacoalense</span>
+</div>
+</div>
+<div class="details" style="margin-top:8px;font-size:13px;color:#666;">⏰ 18:00 — 📍 Estádio Uady Chaiben</div>
+</div>
+</div></div></div>
+</div>
+<aside>
+</div>
+
+<div class="card" id="equipes-download" style="margin-top:14px">
+  <h3 style="margin-top:0;color:var(--red-dark)">Equipes Participantes</h3>
+  <div class="files">
+    <div class="file">
+      <div>
+        <strong>Lista de Equipes (PDF)</strong>
+        <div style="font-size:13px;color:#777">Equipes participantes da Taça Cidade de Londrina</div>
+      </div>
+      <div><a class="btn" download href="equipes.pdf">Baixar</a></div>
+    </div>
+  </div>
+</div>
+<div class="card" id="regulamento" style="margin-top:14px">
+<h3 style="margin-top:0;color:var(--red-dark)">Regulamento / Downloads</h3>
+<div class="files">
+<div class="file">
+<div>
+<strong>Regulamento Oficial (PDF)</strong>
+<div style="font-size:13px;color:#777">Regras, formato e critérios de desempate</div>
+</div>
+<div><a class="btn" download="" href="regulamento.pdf">Baixar</a></div>
+</div>
+<div class="file">
+<div>
+<strong>Ficha de Inscrição (XLS)</strong>
+<div style="font-size:13px;color:#777">Planilha para enviar com os dados dos atletas</div>
+</div>
+<div><a class="btn ghost" download="" href="ficha_inscricao.xlsx">Baixar</a></div>
+</div>
+</div>
+</div>
+<div class="card" id="contato" style="margin-top:14px">
+<h3 style="margin-top:0;color:var(--red-dark)">Contato</h3>
+<div class="contact">
+<div>
+<div style="font-size:13px;color:#666">WhatsApp</div>
+<div style="font-weight:800">(43) 98848-5694</div>
+</div>
+<div style="margin-left:18px">
+<div style="font-size:13px;color:#666">Instagram</div>
+<div style="font-weight:800">@tacacidadedelondrina</div>
+</div>
+</div>
+</div>
+</aside>
+
+<footer>
+<div style="max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:8px 12px">
+<div style="font-size:13px;color:#777">© Taça Cidade de Londrina — Troféu Iran Campos</div>
+<div style="font-size:13px;color:#777">Organização: Federação Londrinense</div>
+</div>
+</footer>
+</main>
+<script>
+const teams = [
+  {id:1,name:'ARAPONGAS',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0},
+  {id:2,name:'BAURU EC',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0},
+  {id:3,name:'CLUBE ATLÉTICO ASSISENSE',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0},
+  {id:4,name:'CLUBE ATLÉTICO CAMBÉ',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0},
+  {id:5,name:'JABOTICABAL ATLÉTICO',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0},
+  {id:6,name:'LGM FOOTBAL',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0},
+  {id:7,name:'POLIVALENTE',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0},
+  {id:8,name:'UNIÃO CACOALENSE',j:0,v:0,e:0,d:0,gp:0,gc:0,pts:0}
+];
+
+function renderTeams(){
+  const el = document.getElementById('teamsList');
+  el.innerHTML='';
+  teams.forEach(t=>{
+    const div = document.createElement('div'); div.className='team';
+    div.innerHTML = `
+      <div class="tlogo"><img src="team-placeholder.png" alt="logo" style="width:38px;height:38px;object-fit:contain"></div>
+      <div style="flex:1"><h4>${t.name}</h4><div style="font-size:12px;color:#888">Jogos: ${t.j} • Pts: ${t.pts}</div></div>
+    `;
+    el.appendChild(div);
+  })
+  document.getElementById('teamsCount').innerText = teams.length;
+}
+
+function renderStandings(){
+  const tbody = document.querySelector('#standings tbody');
+  tbody.innerHTML='';
+  const sorted = [...teams].sort((a,b)=>a.name.localeCompare(b.name));
+  sorted.forEach((t,i)=>{
+    const sg = t.gp - t.gc;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="pos">${i+1}</td>
+      <td>${t.name}</td>
+      <td>${t.j}</td>
+      <td>${t.v}</td>
+      <td>${t.e}</td>
+      <td>${t.d}</td>
+      <td>${t.gp}</td>
+      <td>${t.gc}</td>
+      <td>${sg}</td>
+      <td>${t.pts}</td>
+    `;
+    tbody.appendChild(tr);
+  })
+  document.getElementById('updated').innerText = new Date().toLocaleString();
+}
+
+function sortStandings(by){
+  if(by==='pts') teams.sort((a,b)=>b.pts-a.pts);
+  else if(by==='sg') teams.sort((a,b)=>(b.gp-b.gc)-(a.gp-a.gc));
+  renderStandings();
+  renderTeams();
+}
+
+renderTeams(); renderStandings();
+</script>
+</body>
+</html>
